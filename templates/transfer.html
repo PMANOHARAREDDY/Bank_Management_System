@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js')}}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="user signinBx">
+          <div class="imgBx"><img src="/static/Bank LOgo.png" alt="" /></div>
+          <div class="formBx">
+            <form action="" method="post">
+              <h2>Transfer Money</h2>
+              <select class="form-select" aria-label="Default select example" name="accid">
+                {% for target in targets %}
+                <option value="{{target[0]}}">{{target[0]}} - {{target[1]}}</option>
+                {% endfor %}
+            </select>
+              <input type="number" name="money" placeholder="Amount" />
+              {{error}}<br>
+              <input type="submit" value="Transfer" />
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </body>
+</html>

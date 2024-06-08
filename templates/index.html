@@ -1,0 +1,47 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js')}}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="user signinBx">
+          <div class="imgBx"><img src="/static/bank_logo_2.png" alt="LOGO" /></div>
+          <div class="formBx">
+            <form action="" method="post">
+              <h2>Log In</h2>
+              <input type="text" name="username" placeholder="Username" />
+              <input type="hidden" name="mode" value="login">
+              <input type="password" name="password" placeholder="Password" />
+              {{error}}
+              <input type="submit" value="Login" />
+              <p class="signup">
+                Need a new bank account ?
+                <a href="#" onclick="toggleForm();">Open</a>
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="user signupBx">
+          <div class="formBx">
+            <form action="" method="post">
+              <h2>Create an account</h2>
+              <input type="text" name="username" placeholder="Username" />
+              <input type="hidden" name="mode" value="register">
+              <input type="password" name="password" placeholder="Create Password" />
+              <input type="submit" value="Sign Up" />
+              <p class="signup">
+                Already have an account ?
+                <a href="#" onclick="toggleForm();">Sign in.</a>
+              </p>
+            </form>
+          </div>
+          <div class="imgBx"><img src="/static/bank_logo_2.png" alt="" /></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
